@@ -1,0 +1,23 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/api/bookPlace": "pages/api/bookPlace.js",
+  "/api/checkIfBooked": "pages/api/checkIfBooked.js",
+  "/api/getAccomData": "pages/api/getAccomData.js",
+  "/api/getApproachData": "pages/api/getApproachData.js",
+  "/api/getFoodData": "pages/api/getFoodData.js",
+  "/api/saveForm": "pages/api/saveForm.js",
+  "/api/totalySafeGetCredentialsEndpoint": "pages/api/totalySafeGetCredentialsEndpoint.js",
+  "/fifth": "pages/fifth.html",
+  "/finish": "pages/finish.html",
+  "/first": "pages/first.html",
+  "/fourth": "pages/fourth.html",
+  "/": "pages/index.html",
+  "/login": "pages/login.html",
+  "/panelimprezy": "pages/panelimprezy.html",
+  "/second": "pages/second.html",
+  "/third": "pages/third.html",
+  "/api/saveFood": "pages/api/saveFood.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}

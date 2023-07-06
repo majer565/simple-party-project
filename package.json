@@ -1,0 +1,24 @@
+{
+  "name": "party-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.13.7",
+    "@mui/material": "^5.13.7",
+    "cookies-next": "^2.1.2",
+    "material-react-table": "^1.14.0",
+    "next": "13.4.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sqlite": "^4.2.1",
+    "sqlite3": "^5.1.6"
+  }
+}

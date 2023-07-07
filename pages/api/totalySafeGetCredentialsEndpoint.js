@@ -1,27 +1,16 @@
-import sqlite3, { OPEN_READWRITE } from "sqlite3";
-import path from "path";
+import { supabase } from "@/utils/initDb";
 
-export default function handler(req, res) {
-  const dbPath = path.join(process.cwd(), "database/main.sqlite");
-
-  const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-      console.error(err.message);
-      res.status(500).json({ error: "Failed to connect to the database" });
-      return db.close();
+export default async function handler(req, res) {
+  try {
+    const { data, error } = await supabase.from("user").select("*").eq("id", 1);
+    if (error) {
+      console.error("Error creating record:", error);
+      res.status(500).json({ error: "Failed to create record" });
     } else {
-      const query = "SELECT * FROM user WHERE id=1";
-      db.all(query, (err, rows) => {
-        if (err) {
-          console.error(err.message);
-          res
-            .status(500)
-            .json({ error: "Failed to retrieve records from the database" });
-        } else {
-          res.status(200).json(rows);
-        }
-        db.close();
-      });
+      res.status(200).json(data);
     }
-  });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "An error occurred" });
+  }
 }

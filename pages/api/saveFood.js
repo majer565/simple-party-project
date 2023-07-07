@@ -4,7 +4,7 @@ import path from "path";
 export default function handler(req, res) {
   const dbPath = path.join(process.cwd(), "database/main.sqlite");
 
-  const db = new sqlite3.Database(dbPath, OPEN_READWRITE, (err) => {
+  const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
       console.error(err.message);
       res.status(500).json({ error: "Failed to connect to the database" });

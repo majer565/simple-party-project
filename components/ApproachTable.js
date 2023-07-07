@@ -9,7 +9,13 @@ const ApproachTable = () => {
     const fetchData = async () => {
       const response = await fetch("/api/getApproachData");
       const data = await response.json();
-      const mapData = data.map((data) => {
+      const updatedData = data.map((obj) => {
+        return {
+          ...obj,
+          name: decodeURIComponent(obj.name),
+        };
+      });
+      const mapData = updatedData.map((data) => {
         if (data.approach === "car") {
           return { ...data, approach: "Jadę autem" };
         } else if (data.approach === "together") {

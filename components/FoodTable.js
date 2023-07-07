@@ -8,7 +8,14 @@ const FoodTable = () => {
     const fetchData = async () => {
       const response = await fetch("/api/getFoodData");
       const data = await response.json();
-      setData(data);
+      const updatedData = data.map((obj) => {
+        return {
+          ...obj,
+          name: decodeURIComponent(obj.name),
+          text: decodeURIComponent(obj.text),
+        };
+      });
+      setData(updatedData);
     };
     fetchData();
   }, []);

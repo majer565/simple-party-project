@@ -8,7 +8,13 @@ const AccomTable = () => {
     const fetchData = async () => {
       const response = await fetch("/api/getAccomData");
       const data = await response.json();
-      setData(data);
+      const updatedData = data.map((obj) => {
+        return {
+          ...obj,
+          name: decodeURIComponent(obj.name),
+        };
+      });
+      setData(updatedData);
     };
     fetchData();
   }, []);

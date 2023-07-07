@@ -2,7 +2,7 @@ import { supabase } from "@/utils/initDb";
 
 export default async function handler(req, res) {
   try {
-    const { data, error } = await supabase.from("accom").select("*");
+    const { data, error } = await supabase.from("achom").select("*");
     if (error) {
       console.error("Error creating record:", error);
       res.status(500).json({ error: "Failed to create record" });
